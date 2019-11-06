@@ -25,8 +25,11 @@ class BloodRecord(models.Model):
         on_delete=models.CASCADE,
     )
 
-    blood_group = models.CharField(max_length=3)
-    blood_genotype = models.CharField(max_length=2)
+    blood_group = models.CharField(max_length=3, choices=BLOOD_GROUP_OPTION)
+    blood_genotype = models.CharField(max_length=2, choices=BLOOD_GENOTYPE_OPTION)
+
+    def __str__(self):
+        return f"{self.profile} blood record"
 
 
 
@@ -38,3 +41,6 @@ class MeasurementRecord(models.Model):
 
     height = models.DecimalField(verbose_name="height (m/cm)", max_digits=10, decimal_places=2)
     weight = models.DecimalField(verbose_name="weight (kg)", max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.profile} measurement record"

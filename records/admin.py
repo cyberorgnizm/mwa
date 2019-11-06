@@ -1,3 +1,10 @@
 from django.contrib import admin
+from records.models import BloodRecord, MeasurementRecord
 
-# Register your models here.
+
+class BloodGroupInline(admin.TabularInline):
+    model = BloodRecord
+
+
+class MeasurementInline(admin.TabularInline):
+    model = MeasurementRecord
