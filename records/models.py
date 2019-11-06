@@ -44,3 +44,21 @@ class MeasurementRecord(models.Model):
 
     def __str__(self):
         return f"{self.profile} measurement record"
+
+
+
+class ClinicalRecord(models.Model):
+    class Meta:
+        abstract = True
+
+
+
+class WardRecord(models.Model):
+    class Meta:
+        abstract = True
+
+
+
+class MedicalRecord(models.Model):
+    class Meta:
+        abstract = True
