@@ -25,7 +25,7 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.middle_name or None} {self.last_name}"
+        return f"{self.first_name} {self.middle_name or ''} {self.last_name}"
 
     class Meta:
         verbose_name_plural = "Accounts"
