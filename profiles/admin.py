@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseAdmin
 from profiles.forms import CustomUserChangeForm, CustomUserCreationForm
-from profiles.models import CustomUser
+from profiles.models import CustomUser, Practitioner, Patient
 
 
 @admin.register(CustomUser)
@@ -12,5 +12,16 @@ class CustomUserAdmin(BaseAdmin):
     form = CustomUserChangeForm
 
     models = CustomUser
-    list_display = ['username', 'email', 'first_name', 'last_name', 'date_of_birth', 'gender']
+    list_display = ['pk', 'username', 'email', 'first_name', 'last_name', 'date_of_birth', 'gender']
 
+
+
+@admin.register(Practitioner)
+class PractitionerAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'profile', 'username', 'email', 'phone']
+
+
+
+@admin.register(Patient)
+class PatientAdmin(admin.ModelAdmin):
+    list_display = ['id', 'profile', 'email', 'birth_day', 'gender', 'phone', 'address',]
