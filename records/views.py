@@ -23,5 +23,6 @@ class MedicalReportsView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     """
     model = Patient
     context_object_name = "patients_list"
-    # permission_required = ('custom_user.can_view',)
+    permission_required = ('profiles.view_patient',)
     template_name = "records/patient_list.html"
+    

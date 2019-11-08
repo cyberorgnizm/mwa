@@ -3,6 +3,9 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, FormView
 from profiles.forms import CustomUserCreationForm, StaffCreationForm
 from profiles.models import CustomUser, Practitioner, Patient
+# Django permissions
+from django.contrib.auth.models import Permission
+from django.contrib.contenttypes.models import ContentType
 
 class SignUpView(CreateView):
     """Generic class that implements form rendering and model creation, used for user registration"""
@@ -17,8 +20,7 @@ class SignUpView(CreateView):
             first_name=form.cleaned_data["first_name"],
             last_name=form.cleaned_data["last_name"],
         )
-        user.set_password(form.cleaned_data["password"])
-        user.is_staff = True
+        user.set_password(form.cleaned_data["password1"])
         user.save()
         
         form.instance.profile = user
@@ -42,6 +44,15 @@ class StaffSignUpView(CreateView):
         user.set_password(form.cleaned_data["password"])
         user.is_staff = True
         user.save()
+        # sets permission for practitioner
+        content_type = ContentType.objects.get_for_model(Patient)
+        permission = Permission.objects.get(
+            codename='view_patient',
+            content_type=content_type,
+        )
+        user.user_permissions.add(permission)
+        user.save()
+        # end permission session
         
         form.instance.title = form.cleaned_data["title"]
         form.instance.profile = user
