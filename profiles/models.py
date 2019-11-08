@@ -35,10 +35,10 @@ class CustomUser(AbstractUser):
 class Practitioner(models.Model):
     """Practitioner User: This model extends the Generic User for practitioners"""
     TITLE_SELECT_OPTION = [
-        ('Dr', "Doctor",), 
-        ('LPN', 'Licensed practical nurse',),
-        ('RN', 'Registered nurse',),
-        ('APRN', ' Advanced practice registered nurse',),
+        ('Dr', "Doctor (Dr)",), 
+        ('LPN', 'Licensed practical nurse (LPN)',),
+        ('RN', 'Registered nurse (RN)',),
+        ('APRN', ' Advanced practice registered nurse (APRN)',),
     ]
 
     title = models.CharField(max_length=5, verbose_name="title (role)", choices=TITLE_SELECT_OPTION)
