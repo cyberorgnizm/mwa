@@ -13,6 +13,9 @@
     <link href="{% static 'assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css' %}" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="{% static 'assets/css/argon-dashboard.css' %}" rel="stylesheet" />
+    {% block style %}
+    
+    {% endblock style %}
 </head>
 <body class="">
     {% block body %}
@@ -29,7 +32,7 @@
     <script src="{% static 'assets/js/plugins/chart.js/dist/Chart.min.js' %}"></script>
     <script src="{% static 'assets/js/plugins/chart.js/dist/Chart.extension.js' %}"></script>
     <!--   Argon JS   -->
-    <script src="{% static 'assets/js/argon-dashboard.min.js' %}"></script>
+    <script src="{% static 'assets/js/argon-dashboard.js' %}"></script>
     {% comment %} <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script> {% endcomment %}
 </body>
 </html>

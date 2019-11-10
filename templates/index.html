@@ -4,6 +4,27 @@
     E-Health Medical web app
 {% endblock %}
 
+{% block style %}
+{% load static %}
+  <style>
+    #hero{
+        background: url("{% static 'assets/img/theme/business-care-clinic-1282308.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    #overlay{
+      background: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+    #intro{
+      z-index: 10;
+    }
+  </style>
+{% endblock style %}
+
 {% block body %}
 {% comment %} {% if user.is_authenticated %}
   Hi {{ user.username }}!
@@ -13,17 +34,31 @@
   <a href="{% url 'login' %}">login</a> |
   <a href="{% url 'signup' %}">signup</a>
 {% endif %} {% endcomment %}
-<div class="body h-100vh">
+<div class="body h-100">
       <header class="header bg-gradient-primary">
         {% include "includes/navbar.html" %}
-        <div class="header-body">
-          <div class="container">
-
-          </div>
-        </div>
       </header>
-      <div class="container-fluid">
-        
+      <div id="overlay"></div>
+      <div id="hero" class="h-100vh w-100 d-flex flex-column justify-content-center align-items-center">
+        <div id="intro" class="text-center">
+          <img height="200" src="{% static 'assets/img/brand/doctor-medical-mk-logo.png' %}" alt="">
+          <h1 class="text-white">Welcome to MWA</h1>
+          <p class="text-white">A very simple Medical Web Application that focuses on data, builth with Django framework</p>
+          <p class="text-white">Note: MWA is not a brand, it stands for Medical Web Application (MWA).</p>
+          {% if not user.is_authenticated %}
+            <div class="row">
+              <div class="col-6 mx-auto">
+                  <a href="{% url 'profiles:singup' %}" class="btn btn-md bg-gradient-purple text-white m-0">Register</a>
+                  <small class="text-white bold">or</small>
+                  <div class="btn btn-md bg-gradient-purple text-white px-4">Login</div>
+              </div>
+            </div>
+          {% else %}
+            <div class="col-6 mx-auto">
+              <a href="{% url 'records:dashboard' %}" class="btn btn-md bg-gradient-purple text-white m-0">View DashBoard</a>
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
 {% endblock %}
