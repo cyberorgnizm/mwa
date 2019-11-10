@@ -5,12 +5,25 @@
 {% endblock %}
 
 {% block body %}
-{% if user.is_authenticated %}
+{% comment %} {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">login</a> |
   <a href="{% url 'signup' %}">signup</a>
-{% endif %}
+{% endif %} {% endcomment %}
+<div class="body h-100vh">
+      <header class="header bg-gradient-primary">
+        {% include "includes/navbar.html" %}
+        <div class="header-body">
+          <div class="container">
+
+          </div>
+        </div>
+      </header>
+      <div class="container-fluid">
+        
+      </div>
+    </div>
 {% endblock %}
