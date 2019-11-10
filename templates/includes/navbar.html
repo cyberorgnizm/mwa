@@ -4,13 +4,13 @@
         <div class="container-fluid">
             <!-- Brand -->
             <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block navbar-brand" href="#">
-                <img class="navbar-brand-img" width="40" height="40" src="/static/assets/img/brand/doctor-medical-mk-logo.png" alt="Brand logo"> <span>MWA</span>
+                <img class="navbar-brand-img" width="40" height="40" src="{% static 'assets/img/brand/doctor-medical-mk-logo.png' %}" alt="Brand logo"> <span>MWA</span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="mx-auto d-md-none">
-                <img class="navbar-brand-img" width="30" height="30" src="/static/assets/img/brand/doctor-medical-mk-logo.png" alt="Brand logo"> <span class="text-white font-weight-bold">MWA</span>
+                <img class="navbar-brand-img" width="30" height="30" src="{% static 'assets/img/brand/doctor-medical-mk-logo.png' %}" alt="Brand logo"> <span class="text-white font-weight-bold">MWA</span>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-main">
                 <!-- Collapse header -->
@@ -18,7 +18,7 @@
                     <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="#">
-                        <img src="{% static 'assets/img/brand/doctor-medical-mk-logo.png' %}">
+                        <img src="{% static 'assets/img/brand/doctor-medical-mk-logo.png' %}' %}">
                         <span>MWA</span>
                         </a>
                     </div>
@@ -35,12 +35,12 @@
                     {% if not user.is_authenticated %}
                         <li class="nav-item btn btn-sm shadow-none--hover">
                             <a href="{% url 'profiles:signup' %}" class="nav-link">
-                                Register
+                                <i class="ni ni-circle-08 text-pink"></i> Register
                             </a>
                         </li>
                         <li class="nav-item btn btn-sm shadow-none--hover">
                             <a href="{% url 'login' %}" class="nav-link">
-                                Login
+                                <i class="ni ni-key-25 text-info"></i> Login
                             </a>
                         </li>
                     {% else %}
@@ -59,11 +59,11 @@
                                 <div class=" dropdown-header noti-title">
                                 <h6 class="text-overflow m-0">Welcome!</h6>
                                 </div>
-                                <a href="./examples/profile.html" class="dropdown-item">
+                                <a href="#" class="dropdown-item">
                                     <i class="ni ni-single-02"></i>
                                     <span>My profile</span>
                                 </a>
-                                <a href="./examples/profile.html" class="dropdown-item">
+                                <a href="{% url 'records:dashboard' %}" class="dropdown-item">
                                     <i class="ni ni-ui-04"></i>
                                     <span>Dashboard</span>
                                 </a>
