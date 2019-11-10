@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseAdmin
 from profiles.forms import CustomUserChangeForm, CustomUserCreationForm
 from profiles.models import CustomUser, Practitioner, Patient
-from records.admin import BloodGroupInline, MeasurementInline
+from records.admin import BloodGroupInline, MeasurementInline, ClinicalRecordInline, LocationRecordInline
 
 
 @admin.register(CustomUser)
@@ -28,5 +28,7 @@ class PatientAdmin(admin.ModelAdmin):
     inlines = [
         BloodGroupInline,
         MeasurementInline,
+        ClinicalRecordInline,
+        LocationRecordInline,
     ]
     list_display = ['id', 'profile', 'email', 'birth_day', 'gender', 'phone', 'address',]

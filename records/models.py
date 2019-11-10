@@ -48,17 +48,38 @@ class MeasurementRecord(models.Model):
 
 
 class ClinicalRecord(models.Model):
-    class Meta:
-        abstract = True
+    TYPE = (
+        ("Ebola", "Ebola",),
+        ("Malaria", "Malaria",),
+        ("Typhoid", "Typhoid",),
+        ("Hepatitis", "Hepatitis",),
+        # ("HIV", "HIV",),
+        ("Tuberculosis", "Tuberculosis",),
+        ("Others", "Others",),
+    )
+    illness = models.CharField(max_length=255, choices=TYPE)
+    description = models.TextField()
+    test_result = models.BooleanField(default=False)
+    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.illness
+    
 
 
-
-class WardRecord(models.Model):
-    class Meta:
-        abstract = True
-
-
-
-class MedicalRecord(models.Model):
-    class Meta:
-        abstract = True
+class LocationRecord(models.Model):
+    TOWN = (
+        ("Abaji", "Abaji",),
+        ("Garki", "Garki",),
+        ("Bwari", "Bwari",),
+        ("Kuje", "Kuje",),
+        ("Dutse", "Dutse",),
+        ("Gwagwalada", "Gwagwalada",),
+    )
+    state = models.CharField(max_length=255, default="Abuja")
+    town = models.CharField(max_length=255, choices=TOWN)
+    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return f"{self.town}, {self.state}"
+    
