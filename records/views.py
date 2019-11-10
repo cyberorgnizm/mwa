@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import permission_required
 from profiles.models import Patient
 
 
-class StatisticsReportView(LoginRequiredMixin, DetailView):
+class StatisticsReportView(LoginRequiredMixin, ListView):
     """
     Statistical details of the medical records gotten from the users
     Permission: (all users can view this page)
