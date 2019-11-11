@@ -1,7 +1,6 @@
 {% extends "records/dashboard.html" %}
 {% load static %}
 {% block content %}
-    {% include "includes/side_navbar.html" %}
     <div class="main-content">
             <!-- Navbar -->
             <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
@@ -44,15 +43,33 @@
             <!-- Header -->
             <div class="header h-100vh bg-gradient-primary pb-8 pt-5 pt-md-8">
                 <div class="row mt-5">
-                    <div class="col-xl-8 mb-5 mb-xl-0 mx-auto">
+                    <div class="col-sm-11 col-xl-10 mb-5 mb-xl-0 mx-auto">
                         <div class="card shadow">
                             <div class="card-header border-0">
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col-md-3 col-sm-12">
                                 <h3 class="mb-0">Patient Records</h3>
                                 </div>
-                                <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                <div class="col-md-9 col-sm-12 text-right">
+                                <label class="mr-2">
+                                    <input type="checkbox" value="Ebola"> Ebola
+                                </label>
+                                <label class="mr-2">
+                                    <input type="checkbox" value="Malaria"> Malaria
+                                </label>
+                                <label class="mr-2">
+                                    <input type="checkbox" value="Typhoid"> Typhoid
+                                </label>
+                                <label class="mr-2">
+                                    <input type="checkbox" value="Tuberculosis"> Tuberculosis
+                                </label>
+                                <label class="mr-2">
+                                    <input type="checkbox" value="Hepatitis"> Hepatitis
+                                </label>
+                                <label class="mr-2">
+                                    <input type="checkbox" value="Others"> Others
+                                </label>
+                                <a id="toggle_filter" href="#!" class="btn btn-sm btn-primary">See all</a>
                                 </div>
                             </div>
                             </div>
@@ -64,80 +81,36 @@
                                     <th scope="col">Names</th>
                                     <th scope="col">Diagnosis</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">View</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">
-                                    /argon/
-                                    </th>
-                                    <td>
-                                    4,569
-                                    </td>
-                                    <td>
-                                    340
-                                    </td>
-                                    <td>
-                                    <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    /argon/index.html
-                                    </th>
-                                    <td>
-                                    3,985
-                                    </td>
-                                    <td>
-                                    319
-                                    </td>
-                                    <td>
-                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    /argon/charts.html
-                                    </th>
-                                    <td>
-                                    3,513
-                                    </td>
-                                    <td>
-                                    294
-                                    </td>
-                                    <td>
-                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    /argon/tables.html
-                                    </th>
-                                    <td>
-                                    2,050
-                                    </td>
-                                    <td>
-                                    147
-                                    </td>
-                                    <td>
-                                    <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    /argon/profile.html
-                                    </th>
-                                    <td>
-                                    1,795
-                                    </td>
-                                    <td>
-                                    190
-                                    </td>
-                                    <td>
-                                    <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
+                                {% for patient in patients_list %}
+                                    <tr>
+                                        <th scope="row">
+                                        {{patient.profile}}
+                                        </th>
+                                        <td>
+                                        {{patient.patient_record}}
+                                        </td>
+                                        {% if  patient.patient_record.test_result is True %}
+                                            <td>
+                                                Positive
+                                            </td>
+                                        {% else %}
+                                            <td>
+                                                Negative
+                                            </td>
+                                        {% endif %}
+                                        <td>
+                                        <i class="fas fa-address-book text-success mr-3"></i> {{patient.patient_location}}
+                                        </td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btb-btn-outline-info">View</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                             </div>

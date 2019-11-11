@@ -60,7 +60,7 @@ class ClinicalRecord(models.Model):
     illness = models.CharField(max_length=255, choices=TYPE)
     description = models.TextField()
     test_result = models.BooleanField(default=False)
-    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE)
+    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE, related_name="patient_record")
     
     def __str__(self):
         return self.illness
@@ -78,7 +78,7 @@ class LocationRecord(models.Model):
     )
     state = models.CharField(max_length=255, default="Abuja")
     town = models.CharField(max_length=255, choices=TOWN)
-    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE)
+    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE, related_name="patient_location")
     
     def __str__(self):
         return f"{self.town}, {self.state}"
