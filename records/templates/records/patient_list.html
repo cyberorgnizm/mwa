@@ -1,2 +1,159 @@
-<h1>Patient List Record</h1>
-table below here!
+{% extends "records/dashboard.html" %}
+{% load static %}
+{% block content %}
+    {% include "includes/side_navbar.html" %}
+    <div class="main-content">
+            <!-- Navbar -->
+            <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+                <div class="container-fluid">
+                    <!-- Brand -->
+                    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="#">Dashboard</a>
+                    <!-- User -->
+                    <ul class="navbar-nav align-items-center d-none d-md-flex">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media align-items-center">
+                            <span class="avatar avatar-sm rounded-circle">
+                            <img alt="Image placeholder" src="{% static 'assets/img/theme/team-4-800x800.jpg' %}">
+                            </span>
+                            <div class="media-body ml-2 d-none d-lg-block">
+                            <span class="mb-0 text-sm  font-weight-bold">{{user.username}}</span><br>
+                            <span class="mb-0 text-sm  font-weight-bold">last login: {{user.last_login}}</span>
+                            </div>
+                        </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                        <div class=" dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Welcome {{user.username}}!</h6>
+                        </div>
+                        <a href="#" class="dropdown-item">
+                            <i class="ni ni-single-02"></i>
+                            <span>My profile</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="{% url 'logout' %}" class="dropdown-item">
+                            <i class="ni ni-user-run"></i>
+                            <span>Logout</span>
+                        </a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <!-- Header -->
+            <div class="header h-100vh bg-gradient-primary pb-8 pt-5 pt-md-8">
+                <div class="row mt-5">
+                    <div class="col-xl-8 mb-5 mb-xl-0 mx-auto">
+                        <div class="card shadow">
+                            <div class="card-header border-0">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                <h3 class="mb-0">Patient Records</h3>
+                                </div>
+                                <div class="col text-right">
+                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="table-responsive">
+                            <!-- Projects table -->
+                            <table class="table align-items-center table-flush">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Names</th>
+                                    <th scope="col">Diagnosis</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">
+                                    /argon/
+                                    </th>
+                                    <td>
+                                    4,569
+                                    </td>
+                                    <td>
+                                    340
+                                    </td>
+                                    <td>
+                                    <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                    /argon/index.html
+                                    </th>
+                                    <td>
+                                    3,985
+                                    </td>
+                                    <td>
+                                    319
+                                    </td>
+                                    <td>
+                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                    /argon/charts.html
+                                    </th>
+                                    <td>
+                                    3,513
+                                    </td>
+                                    <td>
+                                    294
+                                    </td>
+                                    <td>
+                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                    /argon/tables.html
+                                    </th>
+                                    <td>
+                                    2,050
+                                    </td>
+                                    <td>
+                                    147
+                                    </td>
+                                    <td>
+                                    <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                    /argon/profile.html
+                                    </th>
+                                    <td>
+                                    1,795
+                                    </td>
+                                    <td>
+                                    190
+                                    </td>
+                                    <td>
+                                    <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="row align-items-center justify-content-xl-between">
+                <div class="col-xl-6">
+                    <div class="copyright text-center text-xl-left text-muted">
+                    © 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+                    </div>
+                </div>
+                </div>
+            </footer>
+    </div>
+{% endblock %}

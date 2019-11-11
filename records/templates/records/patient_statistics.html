@@ -53,13 +53,13 @@
                 <div class="header-body">
                     <!-- Card stats -->
                     <div class="row mx-auto">
-                        <div class="col-xl-6 col-lg-6 mb-5">
+                        <div class="col-xl-12 col-lg-12 mb-5">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                 <div class="row">
                                     <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Total Users</h5>
-                                    <span class="h2 font-weight-bold mb-0">350,897</span>
+                                    <span class="h2 font-weight-bold mb-0">{{users_count}}</span>
                                     </div>
                                     <div class="col-auto">
                                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -80,11 +80,11 @@
                                 <div class="row">
                                     <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Total Practitioners</h5>
-                                    <span class="h2 font-weight-bold mb-0">2,356</span>
+                                    <span class="h2 font-weight-bold mb-0">{{practitioners_count}}%</span>
                                     </div>
                                     <div class="col-auto">
-                                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                        <i class="fas fa-chart-pie"></i>
+                                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                        <i class="fas fa-percent"></i>
                                     </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                 <div class="row">
                                     <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Total Patients</h5>
-                                    <span class="h2 font-weight-bold mb-0">49,65%</span>
+                                    <span class="h2 font-weight-bold mb-0">{{patients_count}}%</span>
                                     </div>
                                     <div class="col-auto">
                                     <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -116,17 +116,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 mb-5">
+                        <div class="col-xl-12 col-lg-12 mb-5">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
                                 <div class="row">
                                     <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Total Patients</h5>
-                                    <span class="h2 font-weight-bold mb-0">49,65%</span>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Total Medical Reports</h5>
+                                    <span class="h2 font-weight-bold mb-0">{{medical_records_count}}</span>
                                     </div>
                                     <div class="col-auto">
-                                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                        <i class="fas fa-percent"></i>
+                                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                        <i class="fas fa-chart-bar"></i>
                                     </div>
                                     </div>
                                 </div>
@@ -155,20 +155,37 @@
                                     <tr>
                                     <th scope="row">1</th>
                                     <td>Ebola</td>
-                                    <td>100</td>
-                                    <td>40%</td>
+                                    <td>{{ebola}}</td>
+                                    <td>{{ebola_percentage}}%</td>
                                     </tr>
                                     <tr>
                                     <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
+                                    <td>Malaria</td>
+                                    <td>{{malaria}}</td>
+                                    <td>{{malaria_percentage}}%</td>
                                     </tr>
                                     <tr>
                                     <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
+                                    <td>Typhoid</td>
+                                    <td>{{typhoid}}</td>
+                                    <td>{{typhoid_percentage}}%</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">4</th>
+                                    <td>Tuberculosis</td>
+                                    <td>{{tuberculosis}}</td>
+                                    <td>{{tuberculosis_percentage}}%</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">5</th>
+                                    <td>Hepatitis</td>
+                                    <td>{{hepatitis}}</td>
+                                    <td>{{hepatitis_percentage}}%</td>
+                                    </tr>
+                                    <th scope="row">6</th>
+                                    <td>Others</td>
+                                    <td>{{others}}</td>
+                                    <td>{{others_percentage}}%</td>
                                     </tr>
                                 </tbody>
                                 </table>
