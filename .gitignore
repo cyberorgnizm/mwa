@@ -5,6 +5,8 @@
 ### Virtual Environment ###
 venv/
 
+# Environment Variable File
+.env
 
 ### Django ###
 *.log
