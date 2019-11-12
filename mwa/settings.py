@@ -22,20 +22,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     load_dotenv(dotenv_file, verbose=True)
+else:
+    load_dotenv(verbose=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', '1tk#c)43d8uf!i!*83ui_$kp)rc$mz*tz(yzezy4)d7@likb7a')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.getenv('ENVIRONMENT') == 'development' else False
 
-ALLOWED_HOSTS = [] if os.getenv('ENVIRONMENT') == 'development' else [
+ALLOWED_HOSTS = [
     os.getenv('HOST')
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -107,7 +110,8 @@ WSGI_APPLICATION = 'mwa.wsgi.application'
 # }
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+db_from_env = dj_database_url.config(conn_max_age=500, ssl_require=True)
+DATABASES['default'] = db_from_env
 
 # Custom Authentication model
 AUTH_USER_MODEL = 'profiles.CustomUser'
@@ -155,7 +159,6 @@ STATICFILES_DIRS = [
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Authentication redirection for auth users
@@ -171,4 +174,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 django_heroku.settings(locals())
 
 # This is new
-del DATABASES['default']['OPTIONS']['sslmode']
+# del DATABASES['default']['OPTIONS']['sslmode']

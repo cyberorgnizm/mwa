@@ -176,7 +176,7 @@
                 <div class="row align-items-center justify-content-xl-between">
                 <div class="col-xl-6">
                     <div class="copyright text-center text-xl-left text-muted">
-                    © 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+                    © 2019 <a href="www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
                     </div>
                 </div>
                 </div>
@@ -200,21 +200,25 @@
 
 {% block script %}
     <script type="text/javascript">
-        (async function(){
-            async function getTotalCount(url){
-            let apiData = await fetch(url);
-            let jsonData = await apiData.json();
-            return jsonData.length;
+        document.addEventListener("DOMContentLoaded", function(){
+            async function populateData(){
+                async function getTotalCount(url){
+                let apiData = await fetch(url);
+                let jsonData = await apiData.json();
+                return jsonData.length;
+                }
+
+                var user_count = await getTotalCount(`${window.location.origin}/api/records/users/`);
+                var patients_count = await getTotalCount(`${window.location.origin}/api/records/patients/`);
+                var practitioners_count = await getTotalCount(`${window.location.origin}/api/records/practitioners/`);
+
+                document.getElementById('users-count').innerHTML = user_count;
+                document.getElementById('patients-count').innerHTML = patients_count;
+                document.getElementById('practitioners-count').innerHTML = practitioners_count;
+
             }
 
-            var user_count = await getTotalCount(`https://${window.location.hostname}:8000/api/records/users/`);
-            var patients_count = await getTotalCount(`https://${window.location.hostname}:8000/api/records/patients/`);
-            var practitioners_count = await getTotalCount(`https://${window.location.hostname}:8000/api/records/practitioners/`);
-
-            document.getElementById('users-count').innerHTML = user_count;
-            document.getElementById('patients-count').innerHTML = patients_count;
-            document.getElementById('practitioners-count').innerHTML = practitioners_count;
-
-        })()
+            populateData();
+        });
     </script>
 {% endblock script %}
