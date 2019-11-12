@@ -207,9 +207,9 @@
             return jsonData.length;
             }
 
-            var user_count = await getTotalCount(`http://${window.location.hostname}:8000/api/records/users/`);
-            var patients_count = await getTotalCount(`http://${window.location.hostname}:8000/api/records/patients/`);
-            var practitioners_count = await getTotalCount(`http://${window.location.hostname}:8000/api/records/practitioners/`);
+            var user_count = await getTotalCount(`https://${window.location.hostname}:8000/api/records/users/`);
+            var patients_count = await getTotalCount(`https://${window.location.hostname}:8000/api/records/patients/`);
+            var practitioners_count = await getTotalCount(`https://${window.location.hostname}:8000/api/records/practitioners/`);
 
             document.getElementById('users-count').innerHTML = user_count;
             document.getElementById('patients-count').innerHTML = patients_count;
