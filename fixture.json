@@ -1,0 +1,1179 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "profiles",
+        "model": "customuser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "profiles",
+        "model": "practitioner"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "profiles",
+        "model": "patient"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "records",
+        "model": "measurementrecord"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "records",
+        "model": "bloodrecord"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "records",
+        "model": "locationrecord"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "records",
+        "model": "clinicalrecord"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "m7rgm703bia7gjo7l9vk9wii286abl4q",
+    "fields": {
+        "session_data": "MjJmMjM4MTg1ODVhNjI0ZTMyNTcwNDkzYmQwNTM4OGQxY2IxMTc5MTp7Il9hdXRoX3VzZXJfaWQiOiIxMiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiY2MwODBkODNlODIwODdiOWI1MjlmM2JkNGE0MGY3YWE0NGZiNjE2ZiJ9",
+        "expire_date": "2019-11-24T00:30:03.154Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zrododaab17za6ol6pik3kzt2fgb6ojn",
+    "fields": {
+        "session_data": "MjJmMjM4MTg1ODVhNjI0ZTMyNTcwNDkzYmQwNTM4OGQxY2IxMTc5MTp7Il9hdXRoX3VzZXJfaWQiOiIxMiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiY2MwODBkODNlODIwODdiOWI1MjlmM2JkNGE0MGY3YWE0NGZiNjE2ZiJ9",
+        "expire_date": "2019-11-24T13:34:49.011Z"
+    }
+},
+{
+    "model": "records.bloodrecord",
+    "pk": 1,
+    "fields": {
+        "profile": 1,
+        "blood_group": "O+",
+        "blood_genotype": "AA"
+    }
+},
+{
+    "model": "records.bloodrecord",
+    "pk": 2,
+    "fields": {
+        "profile": 2,
+        "blood_group": "O+",
+        "blood_genotype": "OO"
+    }
+},
+{
+    "model": "records.bloodrecord",
+    "pk": 3,
+    "fields": {
+        "profile": 3,
+        "blood_group": "AB+",
+        "blood_genotype": "BO"
+    }
+},
+{
+    "model": "records.bloodrecord",
+    "pk": 4,
+    "fields": {
+        "profile": 4,
+        "blood_group": "O+",
+        "blood_genotype": "AA"
+    }
+},
+{
+    "model": "records.measurementrecord",
+    "pk": 1,
+    "fields": {
+        "profile": 1,
+        "height": "1.70",
+        "weight": "120.00"
+    }
+},
+{
+    "model": "records.measurementrecord",
+    "pk": 2,
+    "fields": {
+        "profile": 2,
+        "height": "123.00",
+        "weight": "234.00"
+    }
+},
+{
+    "model": "records.measurementrecord",
+    "pk": 3,
+    "fields": {
+        "profile": 3,
+        "height": "123.00",
+        "weight": "89.00"
+    }
+},
+{
+    "model": "records.measurementrecord",
+    "pk": 4,
+    "fields": {
+        "profile": 4,
+        "height": "107.00",
+        "weight": "125.00"
+    }
+},
+{
+    "model": "records.clinicalrecord",
+    "pk": 1,
+    "fields": {
+        "illness": "Ebola",
+        "description": "A very weird disease",
+        "test_result": true,
+        "patient": 1
+    }
+},
+{
+    "model": "records.clinicalrecord",
+    "pk": 2,
+    "fields": {
+        "illness": "Ebola",
+        "description": "Something wrong",
+        "test_result": false,
+        "patient": 2
+    }
+},
+{
+    "model": "records.clinicalrecord",
+    "pk": 3,
+    "fields": {
+        "illness": "Malaria",
+        "description": "Another weird stuff happening",
+        "test_result": true,
+        "patient": 3
+    }
+},
+{
+    "model": "records.clinicalrecord",
+    "pk": 4,
+    "fields": {
+        "illness": "Tuberculosis",
+        "description": "Seriously, coughing his lungs out.",
+        "test_result": true,
+        "patient": 4
+    }
+},
+{
+    "model": "records.locationrecord",
+    "pk": 1,
+    "fields": {
+        "state": "Abuja",
+        "town": "Garki",
+        "patient": 1
+    }
+},
+{
+    "model": "records.locationrecord",
+    "pk": 2,
+    "fields": {
+        "state": "Abuja",
+        "town": "Dutse",
+        "patient": 2
+    }
+},
+{
+    "model": "records.locationrecord",
+    "pk": 3,
+    "fields": {
+        "state": "Abuja",
+        "town": "Kuje",
+        "patient": 3
+    }
+},
+{
+    "model": "records.locationrecord",
+    "pk": 4,
+    "fields": {
+        "state": "Abuja",
+        "town": "Garki",
+        "patient": 4
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add custom user",
+        "content_type": 6,
+        "codename": "add_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change custom user",
+        "content_type": 6,
+        "codename": "change_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete custom user",
+        "content_type": 6,
+        "codename": "delete_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view custom user",
+        "content_type": 6,
+        "codename": "view_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add practitioner",
+        "content_type": 7,
+        "codename": "add_practitioner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change practitioner",
+        "content_type": 7,
+        "codename": "change_practitioner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete practitioner",
+        "content_type": 7,
+        "codename": "delete_practitioner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view practitioner",
+        "content_type": 7,
+        "codename": "view_practitioner"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add patient",
+        "content_type": 8,
+        "codename": "add_patient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change patient",
+        "content_type": 8,
+        "codename": "change_patient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete patient",
+        "content_type": 8,
+        "codename": "delete_patient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view patient",
+        "content_type": 8,
+        "codename": "view_patient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add measurement record",
+        "content_type": 9,
+        "codename": "add_measurementrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change measurement record",
+        "content_type": 9,
+        "codename": "change_measurementrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete measurement record",
+        "content_type": 9,
+        "codename": "delete_measurementrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view measurement record",
+        "content_type": 9,
+        "codename": "view_measurementrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add blood record",
+        "content_type": 10,
+        "codename": "add_bloodrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change blood record",
+        "content_type": 10,
+        "codename": "change_bloodrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete blood record",
+        "content_type": 10,
+        "codename": "delete_bloodrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view blood record",
+        "content_type": 10,
+        "codename": "view_bloodrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add location record",
+        "content_type": 11,
+        "codename": "add_locationrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change location record",
+        "content_type": 11,
+        "codename": "change_locationrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete location record",
+        "content_type": 11,
+        "codename": "delete_locationrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view location record",
+        "content_type": 11,
+        "codename": "view_locationrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add clinical record",
+        "content_type": 12,
+        "codename": "add_clinicalrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change clinical record",
+        "content_type": 12,
+        "codename": "change_clinicalrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete clinical record",
+        "content_type": 12,
+        "codename": "delete_clinicalrecord"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view clinical record",
+        "content_type": 12,
+        "codename": "view_clinicalrecord"
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$foKWdq3CZlGQ$XlU/ZZDzFwTAV4Y7nv/3NN26tJppNMmi/D89j8aSNpc=",
+        "last_login": "2019-11-12T13:36:32.166Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "Mr",
+        "last_name": "Robot",
+        "email": "admin@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-11-08T22:25:56Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$leWXSXS89P1U$DCbDcE3RQCUwKGCUT+mLLNmeKKDX+X02q2wsBBI8wdM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "kstrange",
+        "first_name": "Kyle",
+        "last_name": "Strange",
+        "email": "kylestrange@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2019-11-08T22:27:35Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": [
+            32
+        ]
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$3gJPHZBgDDcH$g3OxKO6IGthzSRVBaVW6/8DR+RkNBcBZGVZ3kpXIZpE=",
+        "last_login": "2019-11-08T22:47:40Z",
+        "is_superuser": false,
+        "username": "samuel",
+        "first_name": "Adole",
+        "last_name": "Samuel",
+        "email": "a-samuel@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-08T22:41:40Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$psBsG43Q7brm$Hd9ZOcCw7Zl5vECvq+ADtBDHxLF/2ZuQ+5bzTnabQjU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "john",
+        "first_name": "John",
+        "last_name": "Churchill",
+        "email": "jchurch@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-10T22:46:34Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$pnX8F8Kj1DUX$IDiyxATUpOcjkn8Nx1WS//kLTpFVJZpP44+06VTon5U=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "kenneth",
+        "first_name": "Kenny",
+        "last_name": "Williams",
+        "email": "kennywill@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-10T22:49:07Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 17,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$Fw9FMLNh8QJg$uOcsly7xyAz70StU7OjPuAdZ6YNFvjDyPpyReyFpHqM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tom",
+        "first_name": "Tom",
+        "last_name": "Kingsley",
+        "email": "tking@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-12T12:52:52Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.practitioner",
+    "pk": 4,
+    "fields": {
+        "title": "Dr",
+        "profile": 13,
+        "phone": null
+    }
+},
+{
+    "model": "profiles.patient",
+    "pk": 1,
+    "fields": {
+        "profile": 13,
+        "phone": null,
+        "address": ""
+    }
+},
+{
+    "model": "profiles.patient",
+    "pk": 2,
+    "fields": {
+        "profile": 15,
+        "phone": null,
+        "address": ""
+    }
+},
+{
+    "model": "profiles.patient",
+    "pk": 3,
+    "fields": {
+        "profile": 16,
+        "phone": null,
+        "address": ""
+    }
+},
+{
+    "model": "profiles.patient",
+    "pk": 4,
+    "fields": {
+        "profile": 17,
+        "phone": null,
+        "address": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2019-11-08T22:26:23.636Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "10",
+        "object_repr": "John  Wick",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2019-11-08T22:26:36.071Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "11",
+        "object_repr": "Samuel  Connor",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2019-11-10T20:02:00.053Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Stephen  Strange",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2019-11-10T20:03:09.033Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Stephen  Strange",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"blood record\", \"object\": \"Stephen  Strange blood record\"}}, {\"added\": {\"name\": \"measurement record\", \"object\": \"Stephen  Strange measurement record\"}}, {\"added\": {\"name\": \"clinical record\", \"object\": \"Ebola\"}}, {\"added\": {\"name\": \"location record\", \"object\": \"Garki, Abuja\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2019-11-10T22:46:34.417Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "15",
+        "object_repr": "  ",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2019-11-10T22:47:05.153Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "15",
+        "object_repr": "John  Cena",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2019-11-10T22:48:28.033Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "John  Cena",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"blood record\", \"object\": \"John  Cena blood record\"}}, {\"added\": {\"name\": \"measurement record\", \"object\": \"John  Cena measurement record\"}}, {\"added\": {\"name\": \"clinical record\", \"object\": \"Ebola\"}}, {\"added\": {\"name\": \"location record\", \"object\": \"Dutse, Abuja\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2019-11-10T22:49:07.280Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "16",
+        "object_repr": "  ",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2019-11-10T22:49:25.663Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "16",
+        "object_repr": "Kanye  West",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2019-11-10T22:50:25.624Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Kanye  West",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"blood record\", \"object\": \"Kanye  West blood record\"}}, {\"added\": {\"name\": \"measurement record\", \"object\": \"Kanye  West measurement record\"}}, {\"added\": {\"name\": \"clinical record\", \"object\": \"Malaria\"}}, {\"added\": {\"name\": \"location record\", \"object\": \"Kuje, Abuja\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2019-11-10T22:51:17.854Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Kanye  West",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"name\": \"clinical record\", \"object\": \"Malaria\", \"fields\": [\"test_result\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2019-11-11T21:19:39.915Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "John  Cena",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"name\": \"clinical record\", \"object\": \"Ebola\", \"fields\": [\"test_result\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2019-11-12T12:52:52.978Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "17",
+        "object_repr": "  ",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2019-11-12T12:53:35.673Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "17",
+        "object_repr": "Tom  Kingsley",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2019-11-12T12:54:20.388Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "Tom  Kingsley",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"clinical record\", \"object\": \"Tuberculosis\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2019-11-12T13:20:59.974Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "16",
+        "object_repr": "Kenny  Williams",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"username\", \"first_name\", \"last_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2019-11-12T13:21:46.331Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "15",
+        "object_repr": "John  Churchill",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"username\", \"last_name\", \"email\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2019-11-12T13:22:11.348Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "16",
+        "object_repr": "Kenny  Williams",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"email\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2019-11-12T13:23:01.436Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "13",
+        "object_repr": "Kyle  Strange",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"username\", \"first_name\", \"email\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2019-11-12T13:23:17.092Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "14",
+        "object_repr": "Adole  Samuel",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"username\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2019-11-12T13:23:50.615Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "14",
+        "object_repr": "Adole  Samuel",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"email\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2019-11-12T13:24:15.554Z",
+        "user": 12,
+        "content_type": 6,
+        "object_id": "12",
+        "object_repr": "Mr  Robot",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"first_name\", \"last_name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2019-11-12T13:26:05.936Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "Tom  Kingsley",
+        "action_flag": 2,
+        "change_message": "[{\"added\": {\"name\": \"blood record\", \"object\": \"Tom  Kingsley blood record\"}}, {\"added\": {\"name\": \"measurement record\", \"object\": \"Tom  Kingsley measurement record\"}}, {\"changed\": {\"name\": \"clinical record\", \"object\": \"Tuberculosis\", \"fields\": [\"description\"]}}, {\"added\": {\"name\": \"location record\", \"object\": \"Garki, Abuja\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2019-11-12T13:26:15.941Z",
+        "user": 12,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Kyle  Strange",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"phone\"]}}]"
+    }
+}
+]

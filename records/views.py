@@ -9,17 +9,17 @@ from records.models import ClinicalRecord
 
 
 class DashBoardView(LoginRequiredMixin, TemplateView):
-    User = get_user_model()
-    # extra context data for template cards
-    users_count = User.objects.all().count()
-    patients_count = Patient.objects.all().count()
-    practitioners_count = Practitioner.objects.all().count()
+    # User = get_user_model()
+    # # extra context data for template cards
+    # users_count = User.objects.count()
+    # patients_count = Patient.objects.all().count()
+    # practitioners_count = Practitioner.objects.all().count()
     
-    extra_context = {
-        "users_count": users_count,
-        "patients_count": patients_count,
-        "practitioners_count": practitioners_count,
-    }
+    # extra_context = {
+    #     "users_count": users_count,
+    #     "patients_count": patients_count,
+    #     "practitioners_count": practitioners_count,
+    # }
     template_name = "records/dashboard.html"
 
 
@@ -42,26 +42,31 @@ class StatisticsReportView(LoginRequiredMixin, ListView):
     queryset = Patient.objects.all()
     context_object_name = "patients_list"
     template_name = "records/patient_statistics.html"
-    extra_context = {
-        "users_count": users_count,
-        "patients_count": round((patients_count / users_count) * 100),
-        "practitioners_count": round((practitioners_count / users_count) * 100, 1),
-        "medical_records_count": medical_records_count,
-        
-        # table data
-        "ebola": medical_records.filter(illness__startswith="Ebola").count,
-        "ebola_percentage": round((medical_records.filter(illness__startswith="Ebola").count()/medical_records.count()) *100),
-        "malaria": medical_records.filter(illness__startswith="Malaria").count,
-        "malaria_percentage": round((medical_records.filter(illness__startswith="Malaria").count()/medical_records.count()) * 100),
-        "typhoid": medical_records.filter(illness__startswith="Typhoid").count,
-        "typhoid_percentage": round((medical_records.filter(illness__startswith="Typhoid").count()/medical_records.count()) * 100),
-        "tuberculosis": medical_records.filter(illness__startswith="Tuberculosis").count,
-        "tuberculosis_percentage": round((medical_records.filter(illness__startswith="Tuberculosis").count()/medical_records.count()) * 100),
-        "hepatitis": medical_records.filter(illness__startswith="Hepatitis").count,
-        "hepatitis_percentage": round((medical_records.filter(illness__startswith="Hepatitis").count()/medical_records.count()) * 100),
-        "others": medical_records.filter(illness__startswith="Others").count,
-        "others_percentage": round((medical_records.filter(illness__startswith="Others").count()/medical_records.count()) * 100)
-    }
+    display = False
+    try:
+        extra_context = {
+            "users_count": users_count,
+            "patients_count": round((patients_count / users_count) * 100),
+            "practitioners_count": round((practitioners_count / users_count) * 100, 1),
+            "medical_records_count": medical_records_count,
+            
+            # table data
+            "ebola": medical_records.filter(illness__startswith="Ebola").count,
+            "ebola_percentage": round((medical_records.filter(illness__startswith="Ebola").count()/medical_records.count()) *100),
+            "malaria": medical_records.filter(illness__startswith="Malaria").count,
+            "malaria_percentage": round((medical_records.filter(illness__startswith="Malaria").count()/medical_records.count()) * 100),
+            "typhoid": medical_records.filter(illness__startswith="Typhoid").count,
+            "typhoid_percentage": round((medical_records.filter(illness__startswith="Typhoid").count()/medical_records.count()) * 100),
+            "tuberculosis": medical_records.filter(illness__startswith="Tuberculosis").count,
+            "tuberculosis_percentage": round((medical_records.filter(illness__startswith="Tuberculosis").count()/medical_records.count()) * 100),
+            "hepatitis": medical_records.filter(illness__startswith="Hepatitis").count,
+            "hepatitis_percentage": round((medical_records.filter(illness__startswith="Hepatitis").count()/medical_records.count()) * 100),
+            "others": medical_records.filter(illness__startswith="Others").count,
+            "others_percentage": round((medical_records.filter(illness__startswith="Others").count()/medical_records.count()) * 100)
+        }
+        display = True
+    except ZeroDivisionError:
+        display = False
 
 
 

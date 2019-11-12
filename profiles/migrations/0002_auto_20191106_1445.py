@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name='customuser',
+            name='CustomUser',
             options={'verbose_name_plural': 'Accounts'},
         ),
         migrations.CreateModel(

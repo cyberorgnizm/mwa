@@ -25,7 +25,8 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.middle_name or ''} {self.last_name}"
+        # return f"{self.first_name} {self.middle_name or ''} {self.last_name}"
+        return f"{self.username}"
 
     class Meta:
         verbose_name_plural = "Accounts"
@@ -43,9 +44,11 @@ class Practitioner(models.Model):
 
     title = models.CharField(max_length=5, verbose_name="title (role)", choices=TITLE_SELECT_OPTION)
     profile = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
+        # settings.AUTH_USER_MODEL,
+        'profiles.CustomUser',
         verbose_name="profile name", 
         on_delete=models.CASCADE,
+        related_name="practitioner_user"
     )
     phone = models.CharField(verbose_name="phone number", max_length=20, blank=True, null=True)
 
@@ -65,9 +68,11 @@ class Practitioner(models.Model):
 class Patient(models.Model):
     """Pateint Use: This model extends the Generic User for patients"""
     profile = models.OneToOneField(
-        settings.AUTH_USER_MODEL, 
+        # settings.AUTH_USER_MODEL,
+        'profiles.CustomUser', 
         verbose_name="profile name", 
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="patient_user"
     )
     phone = models.CharField(verbose_name="phone number", max_length=20, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
