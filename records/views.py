@@ -15,26 +15,10 @@ class DashBoardView(LoginRequiredMixin, TemplateView):
     patients_count = Patient.objects.all().count()
     practitioners_count = Practitioner.objects.all().count()
     
-    # clinical data
-    ebola_count = ClinicalRecord.objects.filter(illness__startswith="Ebola").count()
-    malaria_count = ClinicalRecord.objects.filter(illness__startswith="Malaria").count()
-    typhoid_count = ClinicalRecord.objects.filter(illness__startswith="Typhoid").count()
-    tuberculosis_count = ClinicalRecord.objects.filter(illness__startswith="Tuberculosis").count()
-    hepatitis_count = ClinicalRecord.objects.filter(illness__startswith="Hepatitis").count()
-    others_count = ClinicalRecord.objects.filter(illness__startswith="Others").count()
-    
     extra_context = {
         "users_count": users_count,
         "patients_count": patients_count,
         "practitioners_count": practitioners_count,
-        
-        # clinical data context
-        "ebola_count": ebola_count,
-        "malaria_count": malaria_count,
-        "typhoid_count": typhoid_count,
-        "tuberculosis_count": tuberculosis_count,
-        "hepatitis_count": hepatitis_count,
-        "others_count": others_count, 
     }
     template_name = "records/dashboard.html"
 
@@ -60,8 +44,8 @@ class StatisticsReportView(LoginRequiredMixin, ListView):
     template_name = "records/patient_statistics.html"
     extra_context = {
         "users_count": users_count,
-        "patients_count": (patients_count / users_count) * 100,
-        "practitioners_count": (practitioners_count / users_count) * 100,
+        "patients_count": round((patients_count / users_count) * 100),
+        "practitioners_count": round((practitioners_count / users_count) * 100, 1),
         "medical_records_count": medical_records_count,
         
         # table data

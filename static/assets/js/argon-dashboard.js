@@ -1058,14 +1058,23 @@ var ClinicChart = (function () {
 
   // Methods
 
-  function init($chart) {
+  async function init($chart) {
+    // data fetching from rest api
+    var host = window.location.hostname;
+    var apiData = await fetch("http://" + host + ":8000/api/records/");
+    var jsonData = await apiData.json();
+
+    function filterDataFunction(index, name) {
+      return index.illness.startsWith(name);
+    }
+
     var dataObject = {
-      ebola: Number(document.getElementById("ebola-count").value),
-      malaria: Number(document.getElementById("malaria-count").value),
-      typhoid: Number(document.getElementById("typhoid-count").value),
-      hepatitis: Number(document.getElementById("hepatitis-count").value),
-      tuberculosis: Number(document.getElementById("tuberculosis-count").value),
-      others: Number(document.getElementById("others-count").value),
+      ebola: jsonData.filter(v => filterDataFunction(v, "Ebola")).length,
+      malaria: jsonData.filter(v => filterDataFunction(v, "Malaria")).length,
+      typhoid: jsonData.filter(v => filterDataFunction(v, "Typhoid")).length,
+      hepatitis: jsonData.filter(v => filterDataFunction(v, "Hepatitis")).length,
+      tuberculosis: jsonData.filter(v => filterDataFunction(v, "Tuberculosis")).length,
+      others: jsonData.filter(v => filterDataFunction(v, "Others")).length,
     }
 
     var clinicChart = new Chart($chart, {
