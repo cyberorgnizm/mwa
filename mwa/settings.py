@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'profiles',
     'records',
 ]
@@ -132,3 +133,7 @@ STATICFILES_DIRS = [
 # Authentication redirection for auth users
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+
+# Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

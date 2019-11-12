@@ -63,3 +63,6 @@ class StaffSignUpView(CreateView):
 class ProfileView(FormView):
     template_name="profiles/user.html"
     form_class = ProfileForm
+    success_url = "/accounts/profile"
+    
+    

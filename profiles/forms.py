@@ -45,7 +45,7 @@ class StaffCreationForm(forms.ModelForm):
 
 class ProfileForm(forms.Form):
     first_name = forms.CharField(max_length=100)
-    middle_name = forms.CharField(max_length=100)
+    middle_name = forms.CharField(max_length=100, required=False)
     last_name = forms.CharField(max_length=100)
     username = forms.CharField(validators=[username_validator,])
     email = forms.EmailField(validators=[EmailValidator])

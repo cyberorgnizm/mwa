@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Login{% endblock %}
 
 {% block content %}
@@ -37,7 +39,7 @@
             </div>
             <form role="form" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form | crispy }}
               {% comment %} <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
@@ -34,7 +36,7 @@
           <div class="card-body px-lg-5 py-lg-5">
             <form role="form" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form | crispy }}
               {% comment %} <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
