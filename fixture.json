@@ -693,6 +693,27 @@
 },
 {
     "model": "profiles.customuser",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$8GVij0FBUbNG$oDPLO9Oz/vOVrYtZ06T/vaHRTywMfk46X0TlNg0Z+k4=",
+        "last_login": "2019-11-12T22:17:01.708Z",
+        "is_superuser": false,
+        "username": "adole-samuel",
+        "first_name": "Adole",
+        "last_name": "Samuel",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-12T22:15:42.705Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
     "pk": 12,
     "fields": {
         "password": "pbkdf2_sha256$150000$foKWdq3CZlGQ$XlU/ZZDzFwTAV4Y7nv/3NN26tJppNMmi/D89j8aSNpc=",
@@ -812,6 +833,48 @@
         "is_staff": false,
         "is_active": true,
         "date_joined": "2019-11-12T12:52:52Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 18,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$ZaJbaxakN9k7$OSN0w50bmckr5sHDnUUGbHZ5b3nWW2jjzaRMbav57RQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "connor",
+        "first_name": "samuel",
+        "last_name": "Connor",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-12T22:54:16.637Z",
+        "middle_name": null,
+        "gender": "",
+        "date_of_birth": null,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.customuser",
+    "pk": 19,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$mdJVoL99y6mu$CPiTHCYDeBJ0ZdT1tGGEcxit8dcjgwsP2lK7D/NuWWc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jj",
+        "first_name": "James",
+        "last_name": "John",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2019-11-12T22:59:07.649Z",
         "middle_name": null,
         "gender": "",
         "date_of_birth": null,
