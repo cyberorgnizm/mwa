@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, FormView
-from profiles.forms import CustomUserCreationForm, StaffCreationForm
+from profiles.forms import CustomUserCreationForm, StaffCreationForm, ProfileForm
 from profiles.models import CustomUser, Practitioner, Patient
 # Django permissions
 from django.contrib.auth.models import Permission
@@ -58,3 +58,8 @@ class StaffSignUpView(CreateView):
         form.instance.profile = user
         
         return super().form_valid(form)
+
+
+class ProfileView(FormView):
+    template_name="profiles/user.html"
+    form_class = ProfileForm

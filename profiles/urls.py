@@ -1,10 +1,11 @@
 from django.urls import path
 from django.views.generic import TemplateView
-from profiles.views import SignUpView, StaffSignUpView
+from profiles.views import SignUpView, StaffSignUpView, ProfileView
 
 app_name="profiles"
 urlpatterns = [
-    path('profile/', TemplateView.as_view(template_name="profiles/user.html"), name="profile"),
+    # path('profile/', TemplateView.as_view(template_name="profiles/user.html"), name="profile"),
+    path('profile/', ProfileView.as_view(), name='profile'),
     path('signup/', SignUpView.as_view(), name='signup'),
     path('staff/signup/', StaffSignUpView.as_view(), name='staff-signup'),
 ]
