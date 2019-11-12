@@ -1,4 +1,5 @@
 from django.db import models
+from profiles.models import Patient
 
 
 class BloodRecord(models.Model):
@@ -60,7 +61,7 @@ class ClinicalRecord(models.Model):
     illness = models.CharField(max_length=255, choices=TYPE)
     description = models.TextField()
     test_result = models.BooleanField(default=False)
-    patient = models.OneToOneField("profiles.Patient", on_delete=models.CASCADE, related_name="patient_record")
+    patient = models.OneToOneField(Patient, on_delete=models.CASCADE, related_name="patient_record")
     
     def __str__(self):
         return self.illness
