@@ -6,6 +6,9 @@ from profiles.models import CustomUser, Practitioner, Patient
 # Django permissions
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
+from django.db import IntegrityError
+
+
 
 class SignUpView(CreateView):
     """Generic class that implements form rendering and model creation, used for user registration"""
@@ -15,15 +18,21 @@ class SignUpView(CreateView):
     model = Patient
     
     def form_valid(self, form):
-        user = CustomUser(
+        # TODO: Improve on Integrity check Error handling
+        try:
+            user = CustomUser(
             username=form.cleaned_data["username"],
             first_name=form.cleaned_data["first_name"],
             last_name=form.cleaned_data["last_name"],
-        )
-        user.set_password(form.cleaned_data["password1"])
-        user.save()
-        
-        form.instance.profile = user
+            )
+            user.set_password(form.cleaned_data["password1"])
+            user.save()
+        except IntegrityError as e:
+            return super().form_invalid(form)
+            # from django.shortcuts import render_to_response
+            # return render_to_response("profiles/signup.html", {"message": e.message})
+        else:
+            form.instance.profile = user
         
         return super().form_valid(form)
 

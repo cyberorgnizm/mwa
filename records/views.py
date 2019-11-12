@@ -42,7 +42,6 @@ class StatisticsReportView(LoginRequiredMixin, ListView):
     queryset = Patient.objects.all()
     context_object_name = "patients_list"
     template_name = "records/patient_statistics.html"
-    display = False
     try:
         extra_context = {
             "users_count": users_count,
@@ -64,9 +63,8 @@ class StatisticsReportView(LoginRequiredMixin, ListView):
             "others": medical_records.filter(illness__startswith="Others").count,
             "others_percentage": round((medical_records.filter(illness__startswith="Others").count()/medical_records.count()) * 100)
         }
-        display = True
     except ZeroDivisionError:
-        display = False
+        pass
 
 
 

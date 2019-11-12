@@ -200,20 +200,21 @@
 
 {% block script %}
     <script type="text/javascript">
-        async function getTotalCount(url){
+        (async function(){
+            async function getTotalCount(url){
             let apiData = await fetch(url);
             let jsonData = await apiData.json();
             return jsonData.length;
-        }
+            }
 
-        var user_count = getTotalCount(`http://${window.location.hostname}:8000/api/users/`);
-        var patients_count = getTotalCount(`http://${window.location.hostname}:8000/api/patients/`);
-        var practitioners_count = getTotalCount(`http://${window.location.hostname}:8000/api/practitioners/`);
+            var user_count = await getTotalCount(`http://${window.location.hostname}:8000/api/records/users/`);
+            var patients_count = await getTotalCount(`http://${window.location.hostname}:8000/api/records/patients/`);
+            var practitioners_count = await getTotalCount(`http://${window.location.hostname}:8000/api/records/practitioners/`);
 
-        
-        document.getElementById('users-count').innerText = user_count;
-        document.getElementById('patients-count').innerText = patients_count;
-        document.getElementById('practitioners-count').innerText = practitioners_count;
+            document.getElementById('users-count').innerHTML = user_count;
+            document.getElementById('patients-count').innerHTML = patients_count;
+            document.getElementById('practitioners-count').innerHTML = practitioners_count;
 
+        })()
     </script>
 {% endblock script %}
