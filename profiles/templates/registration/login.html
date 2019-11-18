@@ -2,9 +2,10 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %}Login{% endblock %}
+{% block title%} Login {%endblock %}
 
 {% block content %}
+
 <div class="h-100 bg-default">
   <div class="header bg-gradient-primary py-3 py-lg-6">
     <div class="container">
@@ -12,13 +13,16 @@
         <div class="row justify-content-center">
           <div class="col-lg-5 col-md-6">
             <h1 class="text-white">Welcome!</h1>
-            <p class="text-lead text-light">Use this awesome form to login to your account</p>
+            <p class="text-lead text-light">
+              Use this awesome form to login to your account
+            </p>
           </div>
         </div>
       </div>
     </div>
     <div class="separator separator-bottom separator-skew zindex-100">
-      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
         <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
@@ -29,7 +33,8 @@
         <div class="card bg-secondary shadow border-0">
           <div class="card-header d-flex flex-column justify-content-end align-items-center bg-transparent pb-3">
             <a class="mb-2 text-white text-uppercase" href="#">
-              <img class="img-fluid" width="40" height="40" src="/static/assets/img/brand/doctor-medical-mk-logo.png" alt="Brand logo">
+              <img class="img-fluid" width="40" height="40" src="/static/assets/img/brand/doctor-medical-mk-logo.png"
+                alt="Brand logo" />
             </a>
             <h4>MWA</h4>
           </div>
@@ -38,14 +43,13 @@
               <small>Sign in with credentials</small>
             </div>
             <form role="form" method="POST">
-            {% csrf_token %}
-            {{ form | crispy }}
-              {% comment %} <div class="form-group mb-3">
+              {% csrf_token %} {{ form | crispy }} {% comment %}
+              <div class="form-group mb-3">
                 <div class="input-group input-group-alternative">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Email" type="email">
+                  <input class="form-control" placeholder="Email" type="email" />
                 </div>
               </div>
               <div class="form-group">
@@ -53,11 +57,14 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                   </div>
-                  <input class="form-control" placeholder="Password" type="password">
+                  <input class="form-control" placeholder="Password" type="password" />
                 </div>
-              </div> {% endcomment %}
+              </div>
+              {% endcomment %}
               <div class="text-center">
-                <button type="submit" class="btn btn-primary my-4">Sign in</button>
+                <button type="submit" class="btn btn-primary my-4">
+                  Sign in
+                </button>
               </div>
             </form>
           </div>

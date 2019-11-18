@@ -7,6 +7,7 @@ from profiles.models import CustomUser, Practitioner, Patient
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.db import IntegrityError
+from django.http.response import HttpResponseRedirect
 
 
 
@@ -15,27 +16,20 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = "profiles/signup.html"
-    model = Patient
+    model = CustomUser
     
     def form_valid(self, form):
-        # TODO: Improve on Integrity check Error handling
+        super().form_valid(form)
         try:
-            user = CustomUser(
-            username=form.cleaned_data["username"],
-            first_name=form.cleaned_data["first_name"],
-            last_name=form.cleaned_data["last_name"],
-            )
-            user.set_password(form.cleaned_data["password1"])
-            user.save()
+            Patient.objects.create(profile=self.object)
         except IntegrityError as e:
             return super().form_invalid(form)
-            # from django.shortcuts import render_to_response
-            # return render_to_response("profiles/signup.html", {"message": e.message})
         else:
-            form.instance.profile = user
-        
-        return super().form_valid(form)
-
+            
+            return HttpResponseRedirect(self.get_success_url())
+    
+    
+    
 class StaffSignUpView(CreateView):
     """A class based view for creating Medical Practitioners"""
     form_class = StaffCreationForm

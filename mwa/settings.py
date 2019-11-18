@@ -173,5 +173,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
-# This is new
-# del DATABASES['default']['OPTIONS']['sslmode']
+if DEBUG:
+    # This is new (disables ssl mode for sqlite databases)
+    del DATABASES['default']['OPTIONS']['sslmode']
