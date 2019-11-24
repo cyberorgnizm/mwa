@@ -22,7 +22,8 @@ class BloodRecord(models.Model):
     )
 
     profile = models.OneToOneField(
-        'profiles.Patient', 
+        'profiles.Patient',
+        related_name="patient_blood_record", 
         on_delete=models.CASCADE,
     )
 
@@ -36,7 +37,8 @@ class BloodRecord(models.Model):
 
 class MeasurementRecord(models.Model):
     profile = models.OneToOneField(
-        'profiles.Patient', 
+        'profiles.Patient',
+        related_name="patient_measurement", 
         on_delete=models.CASCADE,
     )
 

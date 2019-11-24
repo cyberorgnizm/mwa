@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, FormView
-from profiles.forms import CustomUserCreationForm, StaffCreationForm, ProfileForm
+from profiles.forms import CustomUserCreationForm, StaffCreationForm, ProfileForm, StaffProfileForm
 from profiles.models import CustomUser, Practitioner, Patient
 # Django permissions
 from django.contrib.auth.models import Permission
@@ -65,7 +65,57 @@ class StaffSignUpView(CreateView):
 
 class ProfileView(FormView):
     template_name="profiles/user.html"
-    form_class = ProfileForm
-    success_url = "/accounts/profile"
+    # form_class = ProfileForm if not self.request.user else StaffProfileForm
+    success_url = "/records/"
     
     
+    def get_form_class(self):
+        form_class = StaffProfileForm if self.request.user.is_staff else ProfileForm
+        return form_class
+    
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        user = self.request.user
+        return ctx
+        
+    
+    def form_valid(self, form):
+        user = self.request.user
+        if user.is_staff:
+            data = form.cleaned_data
+            print(data)
+            user.first_name = data["first_name"]
+            # user.middle_name = data["middle_name"]
+            user.last_name = data["last_name"]
+            user.email = data["email"]
+            user.gender = data["gender"]
+            user.date_of_birth = data["date_of_birth"]
+            user.save()
+            
+            # obtains current practitioner with current user as profile
+            practitioner = Practitioner.objects.filter(profile=user)[0]
+            practitioner.phone = data["phone"]
+            practitioner.save()
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            data = form.cleaned_data
+            print(data)
+            user.first_name = data["first_name"]
+            # user.middle_name = data["middle_name"]
+            user.last_name = data["last_name"]
+            user.email = data["email"]
+            user.gender = data["gender"]
+            user.date_of_birth = data["birth_day"]
+            user.save()
+            
+            patient = Patient.objects.filter(profile=user)[0]
+            # patient.patient_record.illness = data["clinic_test"]
+            # patient.patient_record.test_result = data["test_result"]
+            # patient.patient_record.description = data["test_description"]
+            # patient.patient_location.town = data["town"]
+            # patient.patient_measurement.height = data["height"]
+            # patient.patient_measurement.weight = data["weight"]
+            # patient.patient_blood_record.blood_group = data["blood_group"]
+            # patient.patient_blood_record.blood_genotype = data["blood_genotype"]
+            patient.save()
+            return HttpResponseRedirect(self.get_success_url())

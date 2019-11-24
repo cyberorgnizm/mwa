@@ -45,11 +45,16 @@ class StaffCreationForm(forms.ModelForm):
 
 class ProfileForm(forms.Form):
     first_name = forms.CharField(max_length=100)
-    middle_name = forms.CharField(max_length=100, required=False)
+    # middle_name = forms.CharField(max_length=100, required=False)
     last_name = forms.CharField(max_length=100)
-    username = forms.CharField(validators=[username_validator,])
+    username = forms.CharField(validators=[username_validator,],
+                            widget = forms.TextInput(attrs={'readonly':'readonly'}), 
+                            required=False
+    )
     email = forms.EmailField(validators=[EmailValidator])
-    gender = forms.ChoiceField()
+    gender = forms.ChoiceField(choices=(
+        ('M', "Male",), ('F', "Female",),)
+    )
     birth_day = forms.DateField()
     blood_group = forms.ChoiceField(
         choices=(
@@ -94,4 +99,22 @@ class ProfileForm(forms.Form):
         ),
     )
     test_description = forms.CharField(widget=forms.Textarea)
-    test_result = forms.ChoiceField(widget=forms.CheckboxInput)
+    test_result = forms.ChoiceField(widget=forms.CheckboxInput, choices=((True, True), (False, False)))
+    
+    
+
+class StaffProfileForm(forms.Form):
+    title = forms.CharField(max_length=100)
+    phone = forms.CharField(max_length=20)
+    first_name = forms.CharField(max_length=100)
+    # middle_name = forms.CharField(max_length=100, required=False)
+    last_name = forms.CharField(max_length=100)
+    username = forms.CharField(validators=[username_validator,], 
+                            widget = forms.TextInput(attrs={'readonly':'readonly'}),
+                            required=False,
+    )
+    email = forms.EmailField(validators=[EmailValidator])
+    gender = forms.ChoiceField(choices=(
+        ('M', "Male",), ('F', "Female",),)
+    )
+    date_of_birth = forms.DateField()

@@ -1,38 +1,71 @@
-{% extends "records/dashboard.html" %}
-
-{% load crispy_forms_tags %}
-
+{% extends "records/dashboard.html" %} {% load crispy_forms_tags %}
 {% block content %}
-    <div class="main-content bg-gradient-blue h-100vh">
-        <div class="container h-100 ">
+<div class="main-content bg-gradient-blue h-100vh">
+  <div class="container h-100 ">
+    <div class="row">
+      <div class="col-sm-10 col-md-10 mx-auto pt-6">
+        <div class="card shadow-sm shadow-lg--hover mb-3">
+          <div class="card-header">
+            <h1 class="card-title">Personal Info</h1>
+          </div>
+          <div class="card-body">
             <div class="row">
-                <div class="col-sm-10 col-md-10 mx-auto pt-6">
-                    <div class="card shadow-sm shadow-lg--hover mb-3">
-                        <div class="card-header">
-                            <h1 class="card-title">Personal Info</h1>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="d-flex flex-column mb-4">
-                                        {% comment %} <p class="font-weight-bold">Full Name: {{user.first_name}} {{user.last_name}}</p>
-                                        <p class="font-weight-bold">Username: {{user.username}}</p>
-                                        <p class="font-weight-bold">Email: {{user.email}}</p>
-                                        <p class="font-weight-bold">Gender: {{user.gender}}</p>
-                                        <p class="font-weight-bold">Birthday: {{user.date_of_birth}}</p> {% endcomment %}
-                                        <form method="POST" class="bootstrap4" novalidate>
-                                            {% csrf_token %}
-                                            {{form | crispy}}
-                                            <button type="submit" href="#" class="btn btn-md btn-primary mt-3">Save</button>
-                                        </form>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
+              <div class="col-11">
+                <div class="d-flex flex-column mb-4">
+                  {% comment %}
+                  <p class="font-weight-bold">
+                    Full Name: {{user.first_name}} {{user.last_name}}
+                  </p>
+                  <p class="font-weight-bold">Username: {{user.username}}</p>
+                  <p class="font-weight-bold">Email: {{user.email}}</p>
+                  <p class="font-weight-bold">Gender: {{user.gender}}</p>
+                  <p class="font-weight-bold">
+                    Birthday: {{user.date_of_birth}}
+                  </p>
+                  {% endcomment %} {% if user.is_superuser %}
+                  <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                      <p>First Name: {{user.first_name}}</p>
+                      <p>Middle Name: {{user.middle_name}}</p>
+                      <p>Last Name: {{user.last_name}}</p>
+                      <p>Gender: {{user.gender}}</p>
+                      <p>Date of Birth: {{user.date_of_birth}}</p>
+                      <p>Username: {{user.username}}</p>
+                      <p>Email: {{user.email}}</p>
                     </div>
+                    <div class="col-md-6 d-sm-none d-md-block text-center">
+                      <div class="alert alert-info">Please update your details from the admin dashboard as a
+                        <strong>superuser admin</strong>
+                      </div>
+                    </div>
+                  </div>
+                  {% else %}
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p>First Name: {{user.first_name}}</p>
+                      <p>Last Name: {{user.last_name}}</p>
+                      <p>Gender: {{user.gender}}</p>
+                      <p>Date of Birth: {{user.date_of_birth}}</p>
+                      <p>Username: {{user.username}}</p>
+                      <p>Email: {{user.email}}</p>
+                    </div>
+                    <div class="col-md-6">
+                      <form method="POST" class="bootstrap4" novalidate>
+                        {% csrf_token %} {{form | crispy}}
+                        <button type="submit" href="#" class="btn btn-md btn-primary mt-3">
+                          Save
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  {% endif %}
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 {% endblock content %}
